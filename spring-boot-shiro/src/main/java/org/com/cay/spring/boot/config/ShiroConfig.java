@@ -25,6 +25,10 @@ public class ShiroConfig {
 
 	private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
+	/**
+	 * 设置securityManager
+	 * @return
+	 */
 	@Bean
 	public SecurityManager securityManager(){
 		DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
@@ -34,6 +38,10 @@ public class ShiroConfig {
 		return securityManager;
 	}
 
+	/**
+	 * 加载自定义Realm
+	 * @return
+	 */
 	@Bean
 	public MyShiroRealm myShiroRealm(){
 		MyShiroRealm realm = new MyShiroRealm();
@@ -42,6 +50,11 @@ public class ShiroConfig {
 		return realm;
 	}
 
+	/**
+	 * 设置过滤条件
+	 * @param securityManager
+	 * @return
+	 */
 	@Bean
 	public ShiroFilterFactoryBean shiroFilter(@Autowired SecurityManager securityManager){
 		logger.info("ShiroConfig.shiroFilter()...");

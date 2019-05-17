@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:mysql:///shiro?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: admin
+    password: 199368
     type: com.alibaba.druid.pool.DruidDataSource
   jpa:
     hibernate:

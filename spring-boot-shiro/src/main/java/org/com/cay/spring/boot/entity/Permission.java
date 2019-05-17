@@ -28,7 +28,9 @@ public class Permission {
 	private String parentIds; //父编号列表
 
 	private Boolean available = Boolean.FALSE;
-
+	/**
+	 * 一条权限具有多个用户
+	 */
 	@ManyToMany
 	@JoinTable(name = "tb_role_permission",
 			joinColumns = {@JoinColumn(name = "pId")},

@@ -18,7 +18,7 @@ public class ScheduledTask {
 	private static final DateFormat df = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
 
 	//task1实际执行间隔为：fixedDelay + 上一次执行的时间(本例中有1秒的延时)
-	//@Scheduled(fixedDelay = 2000)//从上一次执行完毕后开始算，每隔2秒再执行一次，其中2秒不包括上一次执行的时间
+	@Scheduled(fixedDelay = 2000)//从上一次执行完毕后开始算，每隔2秒再执行一次，其中2秒不包括上一次执行的时间
 	public void task1() throws InterruptedException {
 		Thread.sleep(1000);
 		System.out.println("当前时间：" + df.format(new Date()));
@@ -38,7 +38,7 @@ public class ScheduledTask {
 	}
 
 	//从0秒开始，每隔5秒执行依次
-	@Scheduled(cron = "0/5 * * * * ?")//cron表达式
+	//@Scheduled(cron = "0/5 * * * * ?")//cron表达式
 	public void task4()/* throws InterruptedException */{
 		//Thread.sleep(1000);
 		System.out.println("当前时间：" + df.format(new Date()));

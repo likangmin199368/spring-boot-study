@@ -43,7 +43,7 @@ public class MybatisConfig {
 		 */
 		return DataSourceBuilder.create().build();
 		//使用c3p0数据源
-//		return DataSourceBuilder.create(com.mchange.v2.c3p0.ComboPooledDataSource.class).build();
+		//return DataSourceBuilder.create(com.mchange.v2.c3p0.ComboPooledDataSource.class).build();
 	}
 
 	@Bean
